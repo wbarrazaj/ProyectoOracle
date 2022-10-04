@@ -7,7 +7,7 @@ import datetime
 import traceback
 
 DayList=['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
-KeyWordList=['ORA-','Error','alter']
+KeyWordList=['ORA-','Error','Fatal']
 # KeyWordList=['ORA-','Error','Starting ORACLE instance','Shutting down instance']
 OutputList=[]
 
@@ -15,7 +15,7 @@ OutputList=[]
 SkipOldEventHours=48
 
 # customize name of alert.log
-AlertLogFile=r'alert_cisdbc.log'
+AlertLogFile=r'alert_PRDUSG11.log'
 
 SkipOldEventDateTimeDelta=datetime.timedelta(hours=SkipOldEventHours)
 EventDate=datetime.datetime(1, 1, 1, 0, 0)
