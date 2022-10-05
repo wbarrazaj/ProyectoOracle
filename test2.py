@@ -20,3 +20,5 @@ con.commit()
 for row in cur.execute("SELECT * FROM Conexiones"):
     print(row)
 
+con.close()
+
