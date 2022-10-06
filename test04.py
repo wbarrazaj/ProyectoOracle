@@ -14,8 +14,8 @@ print(Motor, Servidor, Usuario, Clave, BDD, Puerto)
 print("")
 
 res_consulta = cur.execute("select Motor, Tipo, Consulta, Fecha from Tbl_Indicadores where Motor='MariaDB';")  
-res_cons_Motor, res_cons_Tipo, res_cons_Consulta, res_cons_Fecha =res_consulta.fetchall()
-print(res_cons_Motor, res_cons_Tipo, res_cons_Consulta, res_cons_Fecha)
+res_cons_Consulta =res_consulta.fetchall()
+print(res_cons_Consulta[0], res_cons_Consulta[1], res_cons_Consulta[2], res_cons_Consulta[3])
 
 Servidor='Ares2'
 
@@ -27,7 +27,7 @@ print (dbConn)
 
 print (dbConn.ServidorDB,dbConn.SchemaDBD, dbConn.UsuarioDB)
 
-resultado=dbConn.ejecutar_query(res_cons_Consulta)
+resultado=dbConn.ejecutar_query(res_cons_Consulta[2])
 
 print(resultado)
 
