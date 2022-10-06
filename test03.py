@@ -22,3 +22,5 @@ for row in cur.execute("SELECT * FROM Tbl_Conexion"):
 
 con.close()
 
+
+
