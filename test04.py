@@ -23,6 +23,9 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 
 print (dbConn)
 
+print (dbConn.ServidorDB,dbConn.SchemaDBD, dbConn.UsuarioDB)
+
+
 """
 Conn = BaseDD(servidor,usuario,clave,db,puerto,drver)
 
