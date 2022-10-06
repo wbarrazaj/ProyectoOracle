@@ -3,6 +3,8 @@ import os
 import psycopg2
 import sqlite3
 from clases.cls_Bdd import BaseDD
+import datetime
+
 
 con = sqlite3.connect("SmartDB.db") 
 
@@ -32,9 +34,11 @@ i=0
 for a in res_cons_Consulta:
     print("Consulta : ", a[0] )
     resultado=dbConn.ejecutar_query(a[3])
+    fecha_ejecucion = datetime.datetime.now()
+    cur.execute("insert into Tbl_Resultados(Servidor, BDD, Motor, Fecha, id_indicador, Resultados) values (?, ?. ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, a[0],resultado ))
     print(resultado)
     i=i+1
 
 #res_cons_Consulta.close() 
 
-
+cur.close()
