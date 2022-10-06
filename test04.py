@@ -22,7 +22,6 @@ res_cons_Consulta =res_consulta.fetchall()
 
 Servidor='Ares2'
 
-con.close()
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
@@ -41,4 +40,4 @@ for a in res_cons_Consulta:
 
 #res_cons_Consulta.close() 
 
-cur.close()
+con.close()
