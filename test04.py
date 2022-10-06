@@ -14,7 +14,7 @@ print(Motor, Servidor, Usuario, Clave, BDD, Puerto)
 print("")
 
 res_consulta = cur.execute("select Motor, Tipo, Consulta, Fecha from Tbl_Indicadores where Motor='MariaDB';")  
-res_cons_Motor, res_cons_Tipo, res_cons_Consulta, res_cons_Fecha =res_consulta.fetchone()
+res_cons_Motor, res_cons_Tipo, res_cons_Consulta, res_cons_Fecha =res_consulta.fetchall()
 print(res_cons_Motor, res_cons_Tipo, res_cons_Consulta, res_cons_Fecha)
 
 Servidor='Ares2'
