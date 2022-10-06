@@ -57,7 +57,7 @@ class BaseDD():
         elif self.Motor in ('Mysql','MariaDB'):
             cursor = conn.cursor()
             cursor.execute(query)
-            resultado=cursor.fetchone()
+            resultado=cursor.fetchall()
             #print(">>>>>>>>>>> "+resultado)
             conn.commit()
             conn.close()
