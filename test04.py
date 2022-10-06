@@ -26,6 +26,7 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 print (dbConn)
 
 print (dbConn.ServidorDB,dbConn.SchemaDBD, dbConn.UsuarioDB)
+
 resultado=dbConn.ejecutar_query(res_cons_Consulta)
 
 print(resultado)
