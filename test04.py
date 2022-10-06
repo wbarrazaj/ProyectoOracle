@@ -13,7 +13,7 @@ Motor, Servidor, Usuario, Clave, BDD, Puerto =res_conn.fetchone()
 
 print("")
 
-res_consulta = cur.execute("select Motor, Tipo, Consulta, Fecha from Tbl_Indicadores where Motor='MariaDB';")  
+res_consulta = cur.execute("select Id, Motor, Tipo, Consulta, Fecha from Tbl_Indicadores where Motor='MariaDB';")  
 res_cons_Consulta =res_consulta.fetchall()
 
 
@@ -30,8 +30,8 @@ print (dbConn.ServidorDB,dbConn.SchemaDBD, dbConn.UsuarioDB)
 
 i=0
 for a in res_cons_Consulta:
-    print("Consulta : ", i )
-    resultado=dbConn.ejecutar_query(a[2])
+    print("Consulta : ", a[0] )
+    resultado=dbConn.ejecutar_query(a[3])
     print(resultado)
     i=i+1
 
