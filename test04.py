@@ -1,6 +1,6 @@
 #import sqlanydb
 import os
-import pyodbc2
+import psycopg2
 import sqlite3
 from clases.cls_Bdd import BaseDD
 
