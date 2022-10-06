@@ -16,10 +16,7 @@ print("")
 res_consulta = cur.execute("select Motor, Tipo, Consulta, Fecha from Tbl_Indicadores where Motor='MariaDB';")  
 res_cons_Consulta =res_consulta.fetchall()
 
-for a in res_cons_Consulta:
-    print("Consulta : ", a[2])
 
-res_consulta.close()
 
 Servidor='Ares2'
 
@@ -31,7 +28,12 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 
 print (dbConn.ServidorDB,dbConn.SchemaDBD, dbConn.UsuarioDB)
 
-#resultado=dbConn.ejecutar_query(res_cons_Consulta[0][2])
 
-#print(resultado)
+for a in res_cons_Consulta:
+    print("Consulta : ", a[2])
+    resultado=dbConn.ejecutar_query(a[2])
+    print(resultado)
+
+res_consulta.close() 
+
 
