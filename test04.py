@@ -28,11 +28,12 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 
 print (dbConn.ServidorDB,dbConn.SchemaDBD, dbConn.UsuarioDB)
 
-
+i=0
 for a in res_cons_Consulta:
-    print("Consulta : ", a[2])
+    print("Consulta : ", i , a[2])
     resultado=dbConn.ejecutar_query(a[2])
     print(resultado)
+    i=i+1
 
 res_consulta.close() 
 
