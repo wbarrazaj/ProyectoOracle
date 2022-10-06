@@ -9,7 +9,7 @@ con = sqlite3.connect("SmartDB.db")
 cur = con.cursor()
 res_conn = cur.execute("select Motor, Servidor, Usuario, Clave, BDD, Puerto from Tbl_Conexion where Servidor = 'Ares';") 
 Motor, Servidor, Usuario, Clave, BDD, Puerto =res_conn.fetchone() 
-print(Motor, Servidor, Usuario, Clave, BDD, Puerto) 
+#print(Motor, Servidor, Usuario, Clave, BDD, Puerto) 
 
 print("")
 
@@ -24,7 +24,7 @@ con.close()
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
-print (dbConn)
+#print (dbConn)
 
 print (dbConn.ServidorDB,dbConn.SchemaDBD, dbConn.UsuarioDB)
 
