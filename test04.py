@@ -35,6 +35,6 @@ for a in res_cons_Consulta:
     print(resultado)
     i=i+1
 
-res_cons_Consulta.close() 
+#res_cons_Consulta.close() 
 
 
