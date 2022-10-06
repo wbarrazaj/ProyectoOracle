@@ -70,6 +70,7 @@ class BaseDD():
             conn.close()
         else:
             print("Otra Motor")
+        return resultado
 
     def chk_default(c):
         res = True
