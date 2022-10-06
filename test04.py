@@ -30,23 +30,3 @@ resultado=dbConn.ejecutar_query(res_cons_Consulta)
 
 print(resultado)
 
-"""
-Conn = BaseDD(servidor,usuario,clave,db,puerto,drver)
-
-
-print(Conn.ServidorDB)
-a=pyodbc.drivers()
-
-print(a)
-print(Conn)
-
-conn = pyodbc.connect(driver=drver, server=servidor , database=db ,uid=usuario , pwd=clave)
-
-print("Aqui")
-
-b=conn.conectar()
-
-print(b)
-print("Termino")
-
-"""
