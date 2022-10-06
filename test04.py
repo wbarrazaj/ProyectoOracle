@@ -17,6 +17,8 @@ res_consulta = cur.execute("select Motor, Tipo, Consulta, Fecha from Tbl_Indicad
 res_cons_Motor, res_cons_Tipo, res_cons_Consulta, res_cons_Fecha =res_consulta.fetchone()
 print(res_cons_Motor, res_cons_Tipo, res_cons_Consulta, res_cons_Fecha)
 
+Servidor='Ares2'
+
 con.close()
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
