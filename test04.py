@@ -30,11 +30,11 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 print (dbConn.ServidorDB,dbConn.SchemaDBD, dbConn.UsuarioDB)
 
 for a in res_cons_Consulta:
-    print("Consulta : ", a[0] )
+    #print("Consulta : ", a[0] )
     resultado=dbConn.ejecutar_query(a[3])
     fecha_ejecucion = datetime.datetime.now()
     cur.execute("insert into Tbl_Resultados(Servidor, BDD, Motor, Fecha, id_indicador) values (?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, a[0]))
-    print(resultado)
+    #print(resultado)
 
 res_ejec_consulta = cur.execute("select Servidor, BDD, Motor, Fecha, id_indicador from Tbl_Resultados where Motor='MariaDB';")  
 res_ej_Consulta =res_ejec_consulta.fetchall()
