@@ -41,7 +41,7 @@ res_ejec_consulta = cur.execute("select Servidor, BDD, Motor, Fecha, id_indicado
 res_ej_Consulta =res_ejec_consulta.fetchall()
 
 
-for b in res_cons_Consulta: 
+for b in res_ej_Consulta: 
     print(b[0])
     print(b[1])
     print(b[2])
