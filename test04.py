@@ -45,7 +45,7 @@ for a in res_cons_Consulta:
 
     #cur.execute("insert into Tbl_Resultados(Servidor) values (?);", (Servidor))
     
-res_ejec_consulta = cur.execute("select * from Tbl_Resultados where Motor='MariaDB';")  
+res_ejec_consulta = cur.execute("select * from Tbl_Resultados;")  
 res_ej_Consulta =res_ejec_consulta.fetchall()
 
 
