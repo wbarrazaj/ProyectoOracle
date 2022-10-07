@@ -42,7 +42,12 @@ res_ej_Consulta =res_ejec_consulta.fetchall()
 
 
 for b in res_cons_Consulta: 
-    print(b)
+    print(b[0])
+    print(b[1])
+    print(b[2])
+    print(b[3])
+    print(b[4])
+    print(b[5])
 
 
 #res_cons_Consulta.close() 
