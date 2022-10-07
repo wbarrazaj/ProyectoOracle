@@ -31,7 +31,7 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 
 for a in res_cons_Consulta:
     #print("Consulta : ", a[0] )
-    resultado=str(dbConn.ejecutar_query(a[3]))
+    resultado=dbConn.ejecutar_query(a[3])
     #print(resultado)
     id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
