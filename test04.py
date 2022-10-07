@@ -39,7 +39,7 @@ for a in res_cons_Consulta:
     #cur.executemany("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, resultado))
     #cur.execute("insert into Tbl_Resultados(Servidor) values (?);", (Servidor))
     
-res_ejec_consulta = cur.execute("select * from Tbl_Resultados;")  
+res_ejec_consulta = cur.execute("select Id, Motor, Tipo, Consulta, Fecha from Tbl_Indicadores where Motor='MariaDB';")  
 res_ej_Consulta =res_ejec_consulta.fetchall()
 
 
