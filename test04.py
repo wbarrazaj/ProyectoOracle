@@ -33,11 +33,11 @@ for a in res_cons_Consulta:
     print("Consulta : ", a[0] )
     resultado=dbConn.ejecutar_query(a[3])
     print(resultado)
+    id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
-    #cur.execute("insert into Tbl_Resultados(Servidor, BDD, Motor, Fecha, id_indicador, Resultados) values (?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, a[4],))
-    #print(resultado)
-
-res_ejec_consulta = cur.execute("select Servidor, BDD, Motor, Fecha, id_indicador from Tbl_Resultados where Motor='MariaDB';")  
+    cur.execute("insert into Tbl_Resultados(Servidor, BDD, Motor, Fecha, id_indicador, Resultados) values (?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, resultado))
+    
+res_ejec_consulta = cur.execute("select Servidor, BDD, Motor, Fecha, id_indicador, Resultados from Tbl_Resultados where Motor='MariaDB';")  
 res_ej_Consulta =res_ejec_consulta.fetchall()
 
 
