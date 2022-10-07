@@ -47,7 +47,7 @@ for b in res_cons_Consulta:
     print(b[2])
     print(b[3])
     print(b[4])
-    print(b[5])
+
 
 
 #res_cons_Consulta.close() 
