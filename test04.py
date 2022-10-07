@@ -40,6 +40,8 @@ for a in res_cons_Consulta:
 res_ejec_consulta = cur.execute("select Servidor, BDD, Motor, Fecha, id_indicador, Resultados from Tbl_Resultados where Motor='MariaDB';")  
 res_ej_Consulta =res_ejec_consulta.fetchall()
 
+print (res_ej_Consulta)
+
 
 for b in res_ej_Consulta: 
     print(b)
