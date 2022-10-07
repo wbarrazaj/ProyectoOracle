@@ -36,8 +36,13 @@ for a in res_cons_Consulta:
     id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
     #cur.execute("insert into Tbl_Resultados(Servidor, BDD, Motor, Fecha, id_indicador, Resultados) values (?, ?, ?, ?, ?, ?);", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
-    cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, resultado))
-    con.commit()
+    
+    try:
+        cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, resultado))
+        con.commit()
+    except sqlite3.Error as er:
+        print(er)
+
     #cur.execute("insert into Tbl_Resultados(Servidor) values (?);", (Servidor))
     
 res_ejec_consulta = cur.execute("select * from Tbl_Resultados where Motor='MariaDB';")  
