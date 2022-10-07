@@ -36,7 +36,7 @@ for a in res_cons_Consulta:
     id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
     #cur.execute("insert into Tbl_Resultados(Servidor, BDD, Motor, Fecha, id_indicador, Resultados) values (?, ?, ?, ?, ?, ?);", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
-    cur.executemany("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, resultado))
+    #cur.executemany("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, resultado))
     #cur.execute("insert into Tbl_Resultados(Servidor) values (?);", (Servidor))
     
 res_ejec_consulta = cur.execute("select Servidor, BDD, Motor, Fecha, id_indicador, Resultados from Tbl_Resultados where Motor='MariaDB';")  
