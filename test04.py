@@ -11,14 +11,12 @@ con = sqlite3.connect("SmartDB.db")
 cur = con.cursor()
 res_conn = cur.execute("select Motor, Servidor, Usuario, Clave, BDD, Puerto from Tbl_Conexion where Servidor = 'Ares';") 
 Motor, Servidor, Usuario, Clave, BDD, Puerto =res_conn.fetchone() 
-#print(Motor, Servidor, Usuario, Clave, BDD, Puerto) 
+
 
 print("")
 
 res_consulta = cur.execute("select Id, Motor, Tipo, Consulta, Fecha, Tabla, Estructura from Tbl_Indicadores where Motor='MariaDB';")  
 res_cons_Consulta =res_consulta.fetchall()
-
-
 
 Servidor='Ares2'
 
@@ -37,8 +35,6 @@ for a in res_cons_Consulta:
     fecha_ejecucion = datetime.datetime.now()
     print (a[5])
 
-    #cur.execute("insert into Tbl_Resultados(Servidor, BDD, Motor, Fecha, id_indicador, Resultados) values (?, ?, ?, ?, ?, ?);", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
-    
     try:
         cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, resultado))
         con.commit()
