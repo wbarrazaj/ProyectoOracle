@@ -36,6 +36,7 @@ for a in res_cons_Consulta:
     id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
     print (a)
+    
     #cur.execute("insert into Tbl_Resultados(Servidor, BDD, Motor, Fecha, id_indicador, Resultados) values (?, ?, ?, ?, ?, ?);", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
     
     try:
