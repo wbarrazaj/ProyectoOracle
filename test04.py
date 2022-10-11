@@ -15,7 +15,7 @@ Motor, Servidor, Usuario, Clave, BDD, Puerto =res_conn.fetchone()
 
 print("")
 
-res_consulta = cur.execute("select Id, Motor, Tipo, Consulta, Fecha from Tbl_Indicadores where Motor='MariaDB';")  
+res_consulta = cur.execute("select Id, Motor, Tipo, Consulta, Fecha, Tabla, Estructura from Tbl_Indicadores where Motor='MariaDB';")  
 res_cons_Consulta =res_consulta.fetchall()
 
 
@@ -35,6 +35,7 @@ for a in res_cons_Consulta:
     #print(resultado)
     id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
+    print (a)
     #cur.execute("insert into Tbl_Resultados(Servidor, BDD, Motor, Fecha, id_indicador, Resultados) values (?, ?, ?, ?, ?, ?);", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
     
     try:
