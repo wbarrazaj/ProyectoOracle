@@ -45,7 +45,7 @@ for a in res_cons_Consulta:
         for exec_cons in resultado :
             Dato = [Ind_.Id, Ind_.Motor,Servidor,BDD,fecha_ejecucion ]
             #print(exec_cons)
-            for exec_y in range(Ind_.cant_campos-4):
+            for exec_y in range(Ind_.cant_campos-5):
                 #print (exec_cons[exec_y], exec_y) 
                 Dato.append(str(exec_cons[exec_y]))
             Ind_.insert_tbl(Dato,Ind_.Id)
