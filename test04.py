@@ -39,8 +39,9 @@ for a in res_cons_Consulta:
         con.commit()
         i = 0
         for exec_cons in resultado :
-            print (exec_cons) 
+            print (exec_cons[0]) 
             i = i + 1
+
 
         print (Dato)
 
