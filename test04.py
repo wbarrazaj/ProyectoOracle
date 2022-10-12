@@ -37,6 +37,7 @@ for a in res_cons_Consulta:
     print (a[5])
     Dato = []
     Ind_=Indicadores(Id=id, Motor=dbConn.Motor,conn=con)
+    print(Ind_.cant_campos)
 
     try:
         cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
