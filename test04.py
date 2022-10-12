@@ -35,7 +35,7 @@ for a in res_cons_Consulta:
     id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
     print (a[5])
-    Dato = []
+    #Dato = []
     Ind_=Indicadores(Id=id, Motor=dbConn.Motor,conn=con)
     #print(Ind_.cant_campos-4)
     #print(Ind_.cant_campos)
@@ -50,7 +50,7 @@ for a in res_cons_Consulta:
             for exec_y in range(Ind_.cant_campos-4):
                 #print (exec_cons[exec_y], exec_y) 
                 Dato2.append(str(exec_cons[exec_y]))
-            Dato.append(Dato2)
+            #Dato.append(Dato2)
             Ind_.insert_tbl(Dato2,Ind_.Id)
 
         

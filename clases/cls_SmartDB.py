@@ -82,8 +82,6 @@ class Indicadores():
         cur.execute(query, Datos)
         self.conn.commit()
         #print(Datos)
-        pass
-
 
     def agrega_valor_tupla(self, Datos):
 
