@@ -70,18 +70,18 @@ class Indicadores():
         self.cant_campos = count 
 
         ins_txt = 'INSERT INTO ' + tabla + '(' + substr(campos.strip(),0,len(campos.strip())-1) + ') VALUES (' + substr(campos2.strip(),0,len(campos2.strip())-1) + ')'
-        print(ins_txt)
+        #print(ins_txt)
         return ins_txt
 
     def insert_tbl(self, Datos, id ):
         cur = self.conn.cursor()
         table = self.Tabla
         query = self.insert 
-        print(query,str(id))
+        #print(query,str(id))
         #resp = cur.execute(query) 
         cur.execute(query, Datos)
         self.conn.commit()
-        print(Datos)
+        #print(Datos)
         pass
 
 

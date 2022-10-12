@@ -67,15 +67,4 @@ res_ejec_consulta = cur.execute("select * from Tbl_Resultados;")
 res_ej_Consulta =res_ejec_consulta.fetchall()
 
 
-#print (res_ej_Consulta)
-
-"""
-for b in res_ej_Consulta: 
-    print(b)
-
-
-
-#res_cons_Consulta.close() 
-"""
-
 con.close()
