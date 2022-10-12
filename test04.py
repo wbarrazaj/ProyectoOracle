@@ -4,6 +4,9 @@ import os
 import sqlite3
 from clases.cls_Bdd import BaseDD
 import datetime
+from clases.cls_SmartDB import Indicadores
+from modulos.funciones import substr
+import random 
 
 
 con = sqlite3.connect("SmartDB.db") 
@@ -33,14 +36,16 @@ for a in res_cons_Consulta:
     fecha_ejecucion = datetime.datetime.now()
     print (a[5])
     Dato = []
+    Ind_=Indicadores(Id=id, Motor=dbConn.Motor,conn=con)
 
     try:
         cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
         con.commit()
         i = 0
         for exec_cons in resultado :
-            print (exec_cons[0]) 
-            i = i + 1
+            for exec_y in range(Ind_.cant_campos):
+                print (exec_cons[exec_y]) 
+        i = i + 1
 
 
         print (Dato)

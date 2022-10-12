@@ -1,6 +1,8 @@
 import sqlite3
 from clases.cls_SmartDB import Indicadores
 from modulos.funciones import substr
+import random 
+
 
 
 con = sqlite3.connect("SmartDB.db") 
@@ -30,3 +32,14 @@ msg='  Hola Como estas _  '
 print(substr(msg.strip(), 0, len(msg.strip())-1))
 
 print(a.insert)
+print(a.cant_campos)
+
+Dato= []
+
+for x in range(6) :
+    for y in range(6) :
+        Dato.append((x,y, x+y, x*y))       
+print (Dato)
+
+
+
