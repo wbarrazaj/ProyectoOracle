@@ -44,7 +44,7 @@ for a in res_cons_Consulta:
         con.commit()
         i = 0
         for exec_cons in resultado :
-            Dato2 = []
+            Dato2 = [Ind_.Id, Ind_.Motor,Servidor,fecha_ejecucion ]
             #print(exec_cons)
             for exec_y in range(Ind_.cant_campos-4):
                 #print (exec_cons[exec_y], exec_y) 
