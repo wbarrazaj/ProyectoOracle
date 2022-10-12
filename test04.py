@@ -47,6 +47,7 @@ for a in res_cons_Consulta:
             print(exec_cons)
             for exec_y in range(Ind_.cant_campos-4):
                 print (exec_cons[exec_y], exec_y) 
+                Dato.append(exec_cons[exec_y])
         i = i + 1
 
 
