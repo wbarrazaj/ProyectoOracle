@@ -32,10 +32,19 @@ for a in res_cons_Consulta:
     id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
     print (a[5])
+    Dato = []
 
     try:
         cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
         con.commit()
+        i = 0
+        for exec_cons in resultado :
+            Dato[i] = exec_cons[i]
+            i = i + 1
+                
+        print (Dato)
+
+
     except sqlite3.Error as er:
         print(er)
 
