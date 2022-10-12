@@ -63,7 +63,9 @@ class Indicadores():
             campos = campos + a[0] + ','
             campos2 = campos2 + '?,'
             count=count+1
-        
+
+        print("Cantidad de Campos" + campos.count() )
+
         self.cant_campos = count 
         ins_txt = 'INSERT INTO ' + tabla + '(' + substr(campos.strip(),0,len(campos.strip())-1) + ') VALUES (' + substr(campos2.strip(),0,len(campos2.strip())-1) + ')'
 

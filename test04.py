@@ -6,7 +6,6 @@ from clases.cls_Bdd import BaseDD
 import datetime
 from clases.cls_SmartDB import Indicadores
 from modulos.funciones import substr
-import random 
 
 
 con = sqlite3.connect("SmartDB.db") 
@@ -41,8 +40,5 @@ for a in res_cons_Consulta:
     except sqlite3.Error as er:
         print(er)
 
-
-#res_ejec_consulta = cur.execute("select * from Tbl_Resultados;")  
-#res_ej_Consulta =res_ejec_consulta.fetchall()
 
 con.close()
