@@ -44,7 +44,7 @@ for a in res_cons_Consulta:
         i = 0
         for exec_cons in resultado :
             for exec_y in range(Ind_.cant_campos):
-                print (exec_cons, exec_y) 
+                print (exec_cons[0], exec_y) 
         i = i + 1
 
 
