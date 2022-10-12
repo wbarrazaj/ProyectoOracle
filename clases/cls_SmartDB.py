@@ -16,6 +16,7 @@ class Indicadores():
             self.Estructura = ''
             self.conn=conn
             self.insert = ''
+            self.cant_campos = 0
             self.__lee_indicadores()
 
       
@@ -59,18 +60,21 @@ class Indicadores():
         resp = cur.execute(consulta)
         campos = ''
         campos2 = ''
+        count = 0 
 
         for a in resp.fetchall():
             campos = campos + a[0] + ','
             campos2 = campos2 + '?,'
+            count=count+1
         
+        self.cant_campos = count 
 
         ins_txt = 'INSERT INTO ' + tabla + '(' + substr(campos.strip(),0,len(campos.strip())-1) + ') VALUES (' + substr(campos2.strip(),0,len(campos2.strip())-1) + ')'
         print(ins_txt)
         return ins_txt
 
     def agrega_valor_tupla(self, Datos):
-        
+
         pass
 
 
