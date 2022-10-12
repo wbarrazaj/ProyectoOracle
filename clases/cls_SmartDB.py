@@ -70,7 +70,9 @@ class Indicadores():
         return ins_txt
 
     def agrega_valor_tupla(self, Datos):
+        
         pass
+
 
     
 
