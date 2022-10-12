@@ -6,8 +6,8 @@ from modulos.funciones import substr
 con = sqlite3.connect("SmartDB.db") 
 cur = con.cursor()
 
-a=Indicadores(Id=2, Motor='MariaDB',conn=con)
-a.lee_indicadores()
+a=Indicadores(Id=1, Motor='MariaDB',conn=con)
+#a.lee_indicadores()
 
 print(a.Tabla)
 
@@ -23,6 +23,10 @@ msg = "SELECT p.name AS col_name FROM sqlite_master m LEFT OUTER JOIN pragma_tab
 #print (msg)
 
 
-a.genera_sql_insert('tbl_mdb_p001')
+#a.genera_sql_insert('tbl_mdb_p001')
 
-print(substr('Hola Como estas ', 0, 5))
+msg='  Hola Como estas _  '
+
+print(substr(msg.strip(), 0, len(msg.strip())-1))
+
+print(a.insert)
