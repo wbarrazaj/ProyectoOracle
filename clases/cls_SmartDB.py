@@ -54,7 +54,6 @@ class Indicadores():
     def __genera_sql_insert(self, tabla):
         cur = self.conn.cursor() 
         consulta="SELECT p.name AS col_name FROM sqlite_master m LEFT OUTER JOIN pragma_table_info((m.name)) p ON m.name <> p.name WHERE m.type = 'table' and m.name = '" + tabla + "' ORDER BY p.cid ;"
-        
         resp = cur.execute(consulta)
         campos = ''
         campos2 = ''
@@ -66,7 +65,6 @@ class Indicadores():
             count=count+1
         
         self.cant_campos = count 
-
         ins_txt = 'INSERT INTO ' + tabla + '(' + substr(campos.strip(),0,len(campos.strip())-1) + ') VALUES (' + substr(campos2.strip(),0,len(campos2.strip())-1) + ')'
 
         return ins_txt

@@ -33,7 +33,7 @@ for a in res_cons_Consulta:
     try:
         #cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
         #con.commit()
-        i = 0
+        #i = 0
         for exec_cons in resultado :
             Dato = [Ind_.Id, Ind_.Motor,Servidor,BDD,fecha_ejecucion ]
             for exec_y in range(Ind_.cant_campos-5):
