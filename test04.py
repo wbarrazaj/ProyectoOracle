@@ -50,8 +50,9 @@ for a in res_cons_Consulta:
                 #print (exec_cons[exec_y], exec_y) 
                 Dato2.append(exec_cons[exec_y])
             Dato.append(Dato2)
+            print (Dato, id)
         
-        print (Dato)
+        #print (Dato)
 
 
     except sqlite3.Error as er:
