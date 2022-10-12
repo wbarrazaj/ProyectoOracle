@@ -42,4 +42,4 @@ for x in range(6) :
 print (Dato)
 
 
-
+a.insert_tbl()
