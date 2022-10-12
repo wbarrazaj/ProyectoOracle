@@ -27,7 +27,7 @@ for a in res_cons_Consulta:
     resultado=dbConn.ejecutar_query(a[3])
     id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
-    print (a[5])
+    print ("Tabla--->"+ a[5])
     Ind_=Indicadores(Id=id, Motor=dbConn.Motor,conn=con)
 
     try:
