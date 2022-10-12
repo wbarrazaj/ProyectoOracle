@@ -73,6 +73,16 @@ class Indicadores():
         print(ins_txt)
         return ins_txt
 
+    def insert_tbl(self, Datos, id ):
+        cur = self.conn.cursor()
+        table = self.Tabla
+        query = self.insert 
+        print(query,str(id))
+        #resp = cur.execute(query) 
+
+        pass
+
+
     def agrega_valor_tupla(self, Datos):
 
         pass
