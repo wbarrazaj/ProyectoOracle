@@ -49,7 +49,7 @@ for a in res_cons_Consulta:
             for exec_y in range(Ind_.cant_campos-4):
                 #print (exec_cons[exec_y], exec_y) 
                 Dato2.append(exec_cons[exec_y])
-            Dato.append(Dato)
+            Dato.append(Dato2)
         
         print (Dato)
 
