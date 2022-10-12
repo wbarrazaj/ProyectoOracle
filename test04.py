@@ -46,7 +46,7 @@ for a in res_cons_Consulta:
         for exec_cons in resultado :
             print(exec_cons)
             for exec_y in range(Ind_.cant_campos-4):
-                print (exec_cons[exec_y], exec_y) 
+                #print (exec_cons[exec_y], exec_y) 
                 Dato.append(exec_cons[exec_y])
         i = i + 1
 
@@ -63,7 +63,7 @@ res_ejec_consulta = cur.execute("select * from Tbl_Resultados;")
 res_ej_Consulta =res_ejec_consulta.fetchall()
 
 
-print (res_ej_Consulta)
+#print (res_ej_Consulta)
 
 """
 for b in res_ej_Consulta: 
