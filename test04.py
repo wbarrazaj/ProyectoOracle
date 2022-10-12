@@ -39,7 +39,7 @@ for a in res_cons_Consulta:
         con.commit()
         i = 0
         for exec_cons in resultado :
-            Dato.append[i] = exec_cons[i]
+            Dato.append[i] = exec_cons
             i = i + 1
 
         print (Dato)
