@@ -1,6 +1,6 @@
 #import sqlanydb
 import os
-import psycopg2
+#import psycopg2
 import sqlite3
 from clases.cls_Bdd import BaseDD
 import datetime
@@ -12,8 +12,6 @@ cur = con.cursor()
 res_conn = cur.execute("select Motor, Servidor, Usuario, Clave, BDD, Puerto from Tbl_Conexion where Servidor = 'Ares';") 
 Motor, Servidor, Usuario, Clave, BDD, Puerto =res_conn.fetchone() 
 
-
-print("")
 
 res_consulta = cur.execute("select Id, Motor, Tipo, Consulta, Fecha, Tabla, Estructura from Tbl_Indicadores where Motor='MariaDB';")  
 res_cons_Consulta =res_consulta.fetchall()
@@ -29,14 +27,14 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 
 for a in res_cons_Consulta:
     #print("Consulta : ", a[0] )
-    resultado=str(dbConn.ejecutar_query(a[3]))
+    resultado=dbConn.ejecutar_query(a[3])
     #print(resultado)
     id = a[0] 
     fecha_ejecucion = datetime.datetime.now()
     print (a[5])
 
     try:
-        cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, resultado))
+        cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
         con.commit()
     except sqlite3.Error as er:
         print(er)

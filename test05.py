@@ -6,7 +6,7 @@ from modulos.funciones import substr
 con = sqlite3.connect("SmartDB.db") 
 cur = con.cursor()
 
-a=Indicadores(Id=1, Motor='MariaDB',conn=con)
+a=Indicadores(Id=2, Motor='MariaDB',conn=con)
 #a.lee_indicadores()
 
 print(a.Tabla)
