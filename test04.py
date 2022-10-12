@@ -23,6 +23,7 @@ Servidor='Ares2'
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
+
 for a in res_cons_Consulta:
     resultado=dbConn.ejecutar_query(a[3])
     id = a[0] 
@@ -31,9 +32,6 @@ for a in res_cons_Consulta:
     Ind_=Indicadores(Id=id, Motor=dbConn.Motor,conn=con)
 
     try:
-        #cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
-        #con.commit()
-        #i = 0
         for exec_cons in resultado :
             Dato = [Ind_.Id, Ind_.Motor,Servidor,BDD,fecha_ejecucion ]
             for exec_y in range(Ind_.cant_campos-5):
@@ -42,7 +40,8 @@ for a in res_cons_Consulta:
 
     except sqlite3.Error as er:
         print(er)
-    
+
+
 #res_ejec_consulta = cur.execute("select * from Tbl_Resultados;")  
 #res_ej_Consulta =res_ejec_consulta.fetchall()
 

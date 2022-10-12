@@ -1,6 +1,6 @@
 from readline import insert_text
 from modulos.funciones import substr
-
+import datetime
 import sqlite3
 
 
@@ -75,10 +75,6 @@ class Indicadores():
         query = self.insert 
         cur.execute(query, Datos)
         self.conn.commit()
-
-    def agrega_valor_tupla(self, Datos):
-
-        pass
 
 
     
