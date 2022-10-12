@@ -79,8 +79,8 @@ class Indicadores():
         query = self.insert 
         print(query,str(id))
         #resp = cur.execute(query) 
-        cur.execute(query, Datos)
-        con.commit()
+        #cur.execute(query, Datos)
+        #con.commit()
 
         pass
 
