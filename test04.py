@@ -31,8 +31,8 @@ for a in res_cons_Consulta:
     Ind_=Indicadores(Id=id, Motor=dbConn.Motor,conn=con)
 
     try:
-        cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
-        con.commit()
+        #cur.execute("INSERT INTO Tbl_Resultados VALUES(?, ?, ?, ?, ?, ?)", (Servidor, BDD, Motor, fecha_ejecucion, id, str(resultado)))
+        #con.commit()
         i = 0
         for exec_cons in resultado :
             Dato = [Ind_.Id, Ind_.Motor,Servidor,BDD,fecha_ejecucion ]
@@ -43,8 +43,7 @@ for a in res_cons_Consulta:
     except sqlite3.Error as er:
         print(er)
     
-res_ejec_consulta = cur.execute("select * from Tbl_Resultados;")  
-res_ej_Consulta =res_ejec_consulta.fetchall()
-
+#res_ejec_consulta = cur.execute("select * from Tbl_Resultados;")  
+#res_ej_Consulta =res_ejec_consulta.fetchall()
 
 con.close()
