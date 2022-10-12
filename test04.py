@@ -21,7 +21,6 @@ res_cons_Consulta =res_consulta.fetchall()
 
 Servidor='Ares2'
 
-
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
 #print (dbConn)
@@ -44,7 +43,7 @@ for a in res_cons_Consulta:
         con.commit()
         i = 0
         for exec_cons in resultado :
-            Dato = [Ind_.Id, Ind_.Motor,Servidor,fecha_ejecucion ]
+            Dato = [Ind_.Id, Ind_.Motor,Servidor,BDD,fecha_ejecucion ]
             #print(exec_cons)
             for exec_y in range(Ind_.cant_campos-4):
                 #print (exec_cons[exec_y], exec_y) 
