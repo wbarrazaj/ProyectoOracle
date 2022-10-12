@@ -50,8 +50,8 @@ for a in res_cons_Consulta:
                 #print (exec_cons[exec_y], exec_y) 
                 Dato2.append(exec_cons[exec_y])
             Dato.append(Dato2)
-            Ind_.insert_tbl(Dato,Ind_.Id)
-            #print (Dato, id)
+            #Ind_.insert_tbl(Dato,Ind_.Id)
+            print (Dato, id)
         
         #print (Dato)
 
