@@ -55,7 +55,7 @@ class Indicadores():
         cur = self.conn.cursor() 
         consulta="SELECT p.name AS col_name FROM sqlite_master m LEFT OUTER JOIN pragma_table_info((m.name)) p ON m.name <> p.name WHERE m.type = 'table' and m.name = '" + tabla + "' ORDER BY p.cid ;"
         
-        print(consulta)
+        #print(consulta)
         
         resp = cur.execute(consulta)
         campos = ''
