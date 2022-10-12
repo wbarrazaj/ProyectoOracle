@@ -1,21 +1,28 @@
 import sqlite3
 from clases.cls_SmartDB import Indicadores
+from modulos.funciones import substr
 
 
-#con = sqlite3.connect("SmartDB.db") 
-#cur = con.cursor()
+con = sqlite3.connect("SmartDB.db") 
+cur = con.cursor()
 
-#a=Indicadores(Id=1, Motor='MariaDB',conn=con)
-#a.lee_indicadores()
+a=Indicadores(Id=2, Motor='MariaDB',conn=con)
+a.lee_indicadores()
 
-#print(a.Estructura)
+print(a.Tabla)
+
+print(a.valida_exist_tabla(a.Tabla))
+
+if a.valida_exist_tabla(a.Tabla) == 0:
+    a.creaTabla(a.Tabla)
 
 
-aaa='create table tbl_mdb_p001 (table_schema,size_db, free_space)'
-l=len(aaa)
-print(aaa)
-print(l)
+tabla= 'tbl_mdb_p001'
+msg = "SELECT p.name AS col_name FROM sqlite_master m LEFT OUTER JOIN pragma_table_info((m.name)) p ON m.name <> p.name WHERE m.type = 'table' and m.name = '" + tabla + "' ORDER BY p.cid ;"
 
-aa=aaa.split(',')
+#print (msg)
 
-print(aa)
+
+a.genera_sql_insert('tbl_mdb_p001')
+
+print(substr('Hola Como estas ', 0, 5))
