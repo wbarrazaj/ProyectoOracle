@@ -44,13 +44,13 @@ for a in res_cons_Consulta:
         con.commit()
         i = 0
         for exec_cons in resultado :
+            Dato2 = []
             #print(exec_cons)
             for exec_y in range(Ind_.cant_campos-4):
                 #print (exec_cons[exec_y], exec_y) 
-                Dato.append(exec_cons[exec_y])
-        i = i + 1
-
-
+                Dato2.append(exec_cons[exec_y])
+            Dato.append(Dato)
+        
         print (Dato)
 
 
