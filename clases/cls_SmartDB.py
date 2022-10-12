@@ -81,6 +81,7 @@ class Indicadores():
         #resp = cur.execute(query) 
         #cur.execute(query, Datos)
         #con.commit()
+        print(Datos)
 
         pass
 
