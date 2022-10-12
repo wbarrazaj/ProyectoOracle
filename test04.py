@@ -44,6 +44,7 @@ for a in res_cons_Consulta:
         con.commit()
         i = 0
         for exec_cons in resultado :
+            print(exec_cons)
             for exec_y in range(Ind_.cant_campos):
                 print (exec_cons[0], exec_y) 
         i = i + 1
