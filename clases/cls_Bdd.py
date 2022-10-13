@@ -36,8 +36,8 @@ class BaseDD():
                                 password=self.PasswordDB,
                                 db=self.SchemaDBD
                                     ) 
-            except ValueError as err: 
-                print("Algo salio Mal : {}".format(err))
+            except : 
+                print("Algo salio Mal : ")
                 exit()
 
 
