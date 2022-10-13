@@ -8,9 +8,10 @@ import sqlite3
 from clases.cls_Bdd import BaseDD
 import datetime
 from clases.cls_SmartDB import Indicadores
-from modulos.funciones import substr
+from modulos.funciones import substr,  printlog 
 
-print ("Inicio : " + str(datetime.datetime.now()))
+
+printlog("Inicio .--" )
 
 con = sqlite3.connect("SmartDB.db") 
 
@@ -29,13 +30,13 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 dbConn.ejecutar_query('select 1 ')
 
 if dbConn.Estado==1:
-    print ("Base de Datos Down :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
+    printlog ("Base de Datos Down :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
 else :
     for a in res_cons_Consulta:
         resultado=dbConn.ejecutar_query(a[3])
         id = a[0] 
         fecha_ejecucion = datetime.datetime.now()
-        print ("Tabla--->"+ a[5])
+        printlog ("Tabla--->"+ a[5])
         Ind_=Indicadores(Id=id, Motor=dbConn.Motor,conn=con)
 
         try:
@@ -46,7 +47,7 @@ else :
                 Ind_.insert_tbl(Dato,Ind_.Id)
 
         except sqlite3.Error as er:
-            print(er)
+            printlog (er)
     con.close()
 
-print ("Termino : " + str(datetime.datetime.now()))
+printlog ("Termino .-- ")
