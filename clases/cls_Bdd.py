@@ -17,6 +17,7 @@ class BaseDD():
         self.Port = puerto 
         self.Driver = drver
         self.Motor = motor
+        self.Estado = 0
     
     def conectar(self):
         if self.Motor == 'Sybase': 
@@ -38,6 +39,8 @@ class BaseDD():
                                     ) 
             except : 
                 print("Algo salio Mal : ")
+                self.Estado = 1 
+
 
 
         elif self.Motor=='Postgres':
@@ -51,29 +54,34 @@ class BaseDD():
         return conn
 
     def ejecutar_query(self, query):
-        conn=self.conectar()
-        #print(self.Motor)
-        if self.Motor == 'Sybase':
-            cursor = conn.cursor()
-            cursor.execute(query)
-            conn.commit()
-            conn.close()
-        elif self.Motor in ('Mysql','MariaDB'):
-            cursor = conn.cursor()
-            cursor.execute(query)
-            resultado=cursor.fetchall()
-            #print(">>>>>>>>>>> "+resultado)
-            conn.commit()
-            conn.close()
-        elif self.Motor == 'Postgres':
-            cursor = conn.cursor()
-            cursor.execute(query)
-            record = cursor.fetchone()
-            print("You are connected to - ", record, "\n")
-            conn.commit()
-            conn.close()
-        else:
-            print("Otra Motor")
+        try:
+            conn=self.conectar()
+            #print(self.Motor)
+            if self.Motor == 'Sybase':
+                cursor = conn.cursor()
+                cursor.execute(query)
+                conn.commit()
+                conn.close()
+            elif self.Motor in ('Mysql','MariaDB'):
+                cursor = conn.cursor()
+                cursor.execute(query)
+                resultado=cursor.fetchall()
+                #print(">>>>>>>>>>> "+resultado)
+                conn.commit()
+                conn.close()
+            elif self.Motor == 'Postgres':
+                cursor = conn.cursor()
+                cursor.execute(query)
+                record = cursor.fetchone()
+                print("You are connected to - ", record, "\n")
+                conn.commit()
+                conn.close()
+            else:
+                print("Otra Motor")
+        except:
+                print("Algo salio Mal : ")
+                self.Estado = 1 
+
         return resultado
 
     def chk_default(c):
