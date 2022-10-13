@@ -40,7 +40,7 @@ class BaseDD():
             except : 
                 print("Algo salio Mal : Servidor ---> " + self.ServidorDB + " BDD --->" + self.SchemaDBD)
                 self.Estado = 1 
-                print (self.Estado)
+
 
 
 
