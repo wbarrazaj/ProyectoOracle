@@ -36,8 +36,10 @@ class BaseDD():
                                 password=self.PasswordDB,
                                 db=self.SchemaDBD
                                     ) 
-            except ValueError as err:
-                print("Algo salio Mal : {}".format(err))  
+            except ValueError as err: 
+                print("Algo salio Mal : {}".format(err))
+                exit()
+
 
         elif self.Motor=='Postgres':
             conn = psycopg2.connect(
