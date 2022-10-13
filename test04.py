@@ -25,7 +25,7 @@ Servidor='Ares2'
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
-dbConn.chk_default(dbConn)
+dbConn.chk_default(dbConn.conectar())
 
 print (dbConn.Estado)
 
