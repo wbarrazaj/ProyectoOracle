@@ -8,7 +8,7 @@ import random
 con = sqlite3.connect("SmartDB.db") 
 cur = con.cursor()
 
-a=Indicadores(Id=2, Motor='MariaDB',conn=con)
+a=Indicadores(Id=3, Motor='MariaDB',conn=con)
 #a.lee_indicadores()
 
 print(a.Tabla)
@@ -18,7 +18,7 @@ print(a.valida_exist_tabla(a.Tabla))
 if a.valida_exist_tabla(a.Tabla) == 0:
     a.creaTabla(a.Tabla)
 
-
+"""
 tabla= 'tbl_mdb_p001'
 msg = "SELECT p.name AS col_name FROM sqlite_master m LEFT OUTER JOIN pragma_table_info((m.name)) p ON m.name <> p.name WHERE m.type = 'table' and m.name = '" + tabla + "' ORDER BY p.cid ;"
 
@@ -43,3 +43,4 @@ print (Dato)
 
 
 a.insert_tbl()
+"""
