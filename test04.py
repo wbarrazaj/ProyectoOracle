@@ -25,6 +25,8 @@ Servidor='Ares2'
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
+print (dbConn.Estado)
+
 if dbConn.Estado==1:
     print ("Base de Datos Down ")
 else :
