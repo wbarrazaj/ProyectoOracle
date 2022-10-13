@@ -10,6 +10,7 @@ import datetime
 from clases.cls_SmartDB import Indicadores
 from modulos.funciones import substr
 
+print ("Inicio : " + str(datetime.datetime.now()))
 
 con = sqlite3.connect("SmartDB.db") 
 
@@ -47,3 +48,5 @@ else :
         except sqlite3.Error as er:
             print(er)
     con.close()
+
+print ("Termino : " + str(datetime.datetime.now()))
