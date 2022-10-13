@@ -29,7 +29,7 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 dbConn.ejecutar_query('select 1 ')
 
 if dbConn.Estado==1:
-    print ("Base de Datos Down " + dbConn.ServidorDB + " BDD --->" + dbConn.SchemaDBD )
+    print ("Base de Datos Down :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
 else :
     for a in res_cons_Consulta:
         resultado=dbConn.ejecutar_query(a[3])
