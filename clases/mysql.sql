@@ -155,3 +155,10 @@ where VARIABLE_NAME in ('Innodb_dblwr_writes','Innodb_data_writes','Innodb_log_w
 select *
 from information_schema.GLOBAL_STATUS 
 where VARIABLE_NAME in ('Com_analyze');
+
+
+id, Motor, Servidor, BDD,Fecha, VARIABLE_NAME,VARIABLE_VALUE
+
+0,5,10,15,20,25,30,35,40,45,50,55,60 * * * * /bin/sh /root/kill_agent.sh
+
+test04.py 
