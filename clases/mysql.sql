@@ -159,6 +159,6 @@ where VARIABLE_NAME in ('Com_analyze');
 
 id, Motor, Servidor, BDD,Fecha, VARIABLE_NAME,VARIABLE_VALUE
 
-0,5,10,15,20,25,30,35,40,45,50,55,60 * * * * /bin/sh /root/kill_agent.sh
+0,5,10,15,20,25,30,35,40,45,50,55,60 * * * * /home/wbarraza/Trabajo/ProyectoOracle/test04.py 
 
 test04.py 
