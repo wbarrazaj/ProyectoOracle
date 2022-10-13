@@ -27,10 +27,6 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 
 dbConn.ejecutar_query('select 1 ')
 
-print (dbConn.Estado)
-
-
-
 if dbConn.Estado==1:
     print ("Base de Datos Down ")
 else :
