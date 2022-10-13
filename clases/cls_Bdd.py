@@ -40,6 +40,7 @@ class BaseDD():
             except : 
                 print("Algo salio Mal : ")
                 self.Estado = 1 
+                print (self.Estado)
 
 
 
