@@ -38,7 +38,6 @@ class BaseDD():
                                     ) 
             except : 
                 print("Algo salio Mal : ")
-                exit()
 
 
         elif self.Motor=='Postgres':
