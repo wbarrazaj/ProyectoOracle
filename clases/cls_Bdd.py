@@ -38,7 +38,7 @@ class BaseDD():
                                 db=self.SchemaDBD
                                     ) 
             except : 
-                print("Algo salio Mal : ")
+                print("Algo salio Mal : " + self.ServidorDB + self.SchemaDBD)
                 self.Estado = 1 
                 print (self.Estado)
 
@@ -80,7 +80,7 @@ class BaseDD():
             else:
                 print("Otra Motor")
         except:
-                print("Algo salio Mal : ")
+                print("Algo salio Mal en  " + self.ServidorDB + self.SchemaDBD)
                 self.Estado = 1 
                 resultado = ''
 
