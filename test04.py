@@ -25,23 +25,23 @@ Servidor='Ares2'
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
+if dbConn.Estado==1:
+    print ("Base de Datos Down ")
+else :
+    for a in res_cons_Consulta:
+        resultado=dbConn.ejecutar_query(a[3])
+        id = a[0] 
+        fecha_ejecucion = datetime.datetime.now()
+        print ("Tabla--->"+ a[5])
+        Ind_=Indicadores(Id=id, Motor=dbConn.Motor,conn=con)
 
-for a in res_cons_Consulta:
-    resultado=dbConn.ejecutar_query(a[3])
-    id = a[0] 
-    fecha_ejecucion = datetime.datetime.now()
-    print ("Tabla--->"+ a[5])
-    Ind_=Indicadores(Id=id, Motor=dbConn.Motor,conn=con)
+        try:
+            for exec_cons in resultado :
+                Dato = [Ind_.Id, Ind_.Motor,Servidor,BDD,fecha_ejecucion ]
+                for exec_y in range(Ind_.cant_campos-5):
+                    Dato.append(str(exec_cons[exec_y]))
+                Ind_.insert_tbl(Dato,Ind_.Id)
 
-    try:
-        for exec_cons in resultado :
-            Dato = [Ind_.Id, Ind_.Motor,Servidor,BDD,fecha_ejecucion ]
-            for exec_y in range(Ind_.cant_campos-5):
-                Dato.append(str(exec_cons[exec_y]))
-            Ind_.insert_tbl(Dato,Ind_.Id)
-
-    except sqlite3.Error as er:
-        print(er)
-
-
-con.close()
+        except sqlite3.Error as er:
+            print(er)
+    con.close()
