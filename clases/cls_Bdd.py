@@ -29,12 +29,15 @@ class BaseDD():
                                     pwd=self.PasswordDB
                                     )
         elif self.Motor in ('Mysql','MariaDB'):
-            conn = pymysql.connect(
-                                    host=self.ServidorDB,
-                                    user=self.UsuarioDB,
-                                    password=self.PasswordDB,
-                                    db=self.SchemaDBD
+            try:
+                conn = pymysql.connect(
+                                host=self.ServidorDB,
+                                user=self.UsuarioDB,
+                                password=self.PasswordDB,
+                                db=self.SchemaDBD
                                     ) 
+            except ValueError as err:
+                print("Algo salio Mal : {}".format(err))  
 
         elif self.Motor=='Postgres':
             conn = psycopg2.connect(
