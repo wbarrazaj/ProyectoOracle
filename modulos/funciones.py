@@ -1,4 +1,6 @@
 import datetime
+import time
+
 
 def substr(msg,inicial, final):
     return msg.strip()[inicial:final] 
