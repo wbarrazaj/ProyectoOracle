@@ -83,8 +83,7 @@ class BaseDD():
                 printlog("Otra Motor")
         except pymysql.err.OperationalError as err:
                 printlog("Algo salio Mal : Servidor ---> " + self.ServidorDB + " BDD --->" + self.SchemaDBD)
-                if err.args[0] == 111:
-                    printlog('Error de Conexion')
+                printlog(err.args[0])    
                 self.Estado = 1 
                 resultado = ''
 
