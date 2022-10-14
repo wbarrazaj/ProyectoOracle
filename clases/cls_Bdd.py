@@ -88,11 +88,12 @@ class BaseDD():
         return resultado
 
     def chk_default(self):
-        res = True
+  
         
         try:
             self.ejecutar_query('select 1 ')
-
+            res = True
+            
         except:
             res = False
             
