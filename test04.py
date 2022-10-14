@@ -27,10 +27,8 @@ Servidor='Ares2'
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
-print(dbConn.Estado)
 Status=Indicadores(Id=0, Motor=dbConn.Motor,conn=con)
 dbConn.ejecutar_query('select 1 ;')
-print(dbConn.Estado)
 
 if dbConn.Estado==1:
     printlog ("Base de Datos Down :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
