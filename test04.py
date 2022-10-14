@@ -27,11 +27,14 @@ Servidor='Ares2'
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
+Status=Indicadores(Id=0, Motor=dbConn.Motor,conn=con)
+
 if dbConn.chk_default() :
     printlog ("Base de Datos UP :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
+    Status.insert_tbl_Estado_BDD(0, Motor,Servidor,BDD, 'UP')
 else :
     printlog ("Base de Datos Down :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
-    
+    Status.insert_tbl_Estado_BDD(0, Motor,Servidor,BDD, 'DOWN')
 
 if dbConn.Estado==1:
     printlog ("Base de Datos Down :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )

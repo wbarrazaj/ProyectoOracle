@@ -1,5 +1,5 @@
 from readline import insert_text
-from modulos.funciones import substr
+from modulos.funciones import substr,  printlog 
 import datetime
 import sqlite3
 
@@ -77,7 +77,14 @@ class Indicadores():
         cur.execute(query, Datos)
         self.conn.commit()
 
-
+    def insert_tbl_Estado_BDD (self, Id, Motor,Servidor,BDD, estado):
+        fecha_ejecucion= datetime.datetime.now()
+        tabla='tbl_mdb_p000'
+        txt_insert= self.__genera_sql_insert(self, tabla)
+        Dato = [Id, Motor,Servidor,BDD,fecha_ejecucion, estado ]
+        printlog(Dato) 
+        
+        
     
 
 
