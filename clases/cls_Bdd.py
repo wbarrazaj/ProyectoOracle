@@ -87,11 +87,12 @@ class BaseDD():
 
         return resultado
 
-    def chk_default(c):
+    def chk_default(self):
         res = True
+        
         try:
-            c.query('select 1')
-            c.use_result()
+            self.ejecutar_query('select 1 ')
+
         except:
             res = False
             
