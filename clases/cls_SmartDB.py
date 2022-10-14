@@ -85,7 +85,7 @@ class Indicadores():
         txt_insert= self.__genera_sql_insert(tabla)
         Dato = [id, Motor,Servidor,BDD,fecha_ejecucion, estado ]
         self.id=id
-        self.insert_tbl(self,Dato, id) 
+        self.insert_tbl(Dato, id) 
         printlog(Dato) 
         
         
