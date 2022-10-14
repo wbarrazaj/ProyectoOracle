@@ -19,6 +19,7 @@ cur = con.cursor()
 res_conn = cur.execute("select Motor, Servidor, Usuario, Clave, BDD, Puerto from Tbl_Conexion where Servidor = 'Ares';") 
 Motor, Servidor, Usuario, Clave, BDD, Puerto =res_conn.fetchone() 
 
+print (Motor, Servidor, Usuario, Clave, BDD, Puerto)
 
 res_consulta = cur.execute("select Id, Motor, Tipo, Consulta, Fecha, Tabla, Estructura from Tbl_Indicadores where Motor='MariaDB';")  
 res_cons_Consulta =res_consulta.fetchall()
