@@ -16,7 +16,7 @@ printlog("Inicio .--" )
 con = sqlite3.connect("SmartDB.db") 
 
 cur = con.cursor()
-res_conn = cur.execute("select Motor, Servidor, Usuario, Clave, BDD, Puerto from Tbl_Conexion where Servidor = 'Apolo';") 
+res_conn = cur.execute("select Motor, Servidor, Usuario, Clave, BDD, Puerto from Tbl_Conexion where Servidor = 'Ares';") 
 Motor, Servidor, Usuario, Clave, BDD, Puerto =res_conn.fetchone() 
 
 
