@@ -29,6 +29,7 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 
 print(dbConn.Estado)
 Status=Indicadores(Id=0, Motor=dbConn.Motor,conn=con)
+dbConn.ejecutar_query('select 1 ;')
 print(dbConn.Estado)
 
 if dbConn.chk_default() :
