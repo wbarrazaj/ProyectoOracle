@@ -24,11 +24,11 @@ print (Motor, Servidor, Usuario, Clave, BDD, Puerto)
 res_consulta = cur.execute("select Id, Motor, Tipo, Consulta, Fecha, Tabla, Estructura from Tbl_Indicadores where Motor='MariaDB';")  
 res_cons_Consulta =res_consulta.fetchall()
 
-print(res_cons_Consulta)
-
 #Servidor='Ares2'
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
+
+print(dbConn)
 
 Status=Indicadores(Id=0, Motor=dbConn.Motor,conn=con)
 dbConn.ejecutar_query('select 1 ;')
