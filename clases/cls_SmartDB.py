@@ -83,14 +83,12 @@ class Indicadores():
         fecha_ejecucion= datetime.datetime.now()
         tabla='tbl_mdb_p000'
         self.Tabla=tabla
-        self.insert= self.__genera_sql_insert(self.tabla)
+        self.insert= self.__genera_sql_insert(self.Tabla)
         self.id=id
         Dato = [self.id, Motor,Servidor,BDD,fecha_ejecucion, estado ]
         self.insert_tbl(Dato, id) 
         printlog(Dato) 
-        
-        
-    
+
 
 
 
