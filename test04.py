@@ -28,9 +28,10 @@ res_cons_Consulta =res_consulta.fetchall()
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
-print(dbConn)
+print(dbConn.ServidorDB)
 
 Status=Indicadores(Id=0, Motor=dbConn.Motor,conn=con)
+
 dbConn.ejecutar_query('select 1 ;')
 
 if dbConn.Estado==1:
