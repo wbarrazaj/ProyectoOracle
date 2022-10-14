@@ -30,9 +30,9 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 
 Status=Indicadores(Id=0, Motor=dbConn.Motor,conn=con)
 
-print(Status)
+#dbConn.ejecutar_query('select 1 ;')
 
-dbConn.ejecutar_query('select 1 ;')
+print(dbConn.ejecutar_query('select 1 ;'))
 
 if dbConn.Estado==1:
     printlog ("Base de Datos Down :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
