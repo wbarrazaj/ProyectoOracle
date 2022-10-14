@@ -39,8 +39,8 @@ class BaseDD():
                                 db=self.SchemaDBD
                                     ) 
             except ValueError as err:
-                printlog(err) 
                 printlog("Algo salio Mal : Servidor ---> " + self.ServidorDB + " BDD --->" + self.SchemaDBD)
+                printlog(err) 
                 self.Estado = 1 
 
 
@@ -82,8 +82,8 @@ class BaseDD():
             else:
                 printlog("Otra Motor")
         except ValueError as err:
-                printlog(err)
                 printlog("Algo salio Mal : Servidor ---> " + self.ServidorDB + " BDD --->" + self.SchemaDBD)
+                printlog(err)
                 self.Estado = 1 
                 resultado = ''
 
