@@ -83,7 +83,11 @@ class BaseDD():
                 printlog("Otra Motor")
         except pymysql.err.OperationalError as err:
                 printlog("Algo salio Mal : Servidor ---> " + self.ServidorDB + " BDD --->" + self.SchemaDBD)
-                printlog(str(err.args[0]) + "Can't connect to MySQL server" )    
+                if err.args[0] == 2003:
+                    printlog(str(err.args[0]) + "Can't connect to MySQL server" )    
+                else :
+                    printlog(str(err.args[0]) + "Error to MySQL server" )
+
                 self.Estado = 1 
                 resultado = ''
 
