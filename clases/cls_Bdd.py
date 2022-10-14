@@ -80,7 +80,8 @@ class BaseDD():
                 conn.close()
             else:
                 printlog("Otra Motor")
-        except:
+        except ValueError as err:
+                printlog(err)
                 printlog("Algo salio Mal : Servidor ---> " + self.ServidorDB + " BDD --->" + self.SchemaDBD)
                 self.Estado = 1 
                 resultado = ''
