@@ -32,16 +32,12 @@ Status=Indicadores(Id=0, Motor=dbConn.Motor,conn=con)
 dbConn.ejecutar_query('select 1 ;')
 print(dbConn.Estado)
 
-if dbConn.chk_default() :
-    printlog ("Base de Datos UP :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
-    Status.insert_tbl_Estado_BDD(0, Motor,Servidor,BDD, 'UP')
-else :
-    printlog ("Base de Datos Down :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
-    Status.insert_tbl_Estado_BDD(0, Motor,Servidor,BDD, 'DOWN')
-
 if dbConn.Estado==1:
     printlog ("Base de Datos Down :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
+    Status.insert_tbl_Estado_BDD(0, Motor,Servidor,BDD, 'DOWN')
 else :
+    printlog ("Base de Datos UP :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
+    Status.insert_tbl_Estado_BDD(0, Motor,Servidor,BDD, 'UP')
     for a in res_cons_Consulta:
         resultado=dbConn.ejecutar_query(a[3])
         id = a[0] 
