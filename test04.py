@@ -27,9 +27,8 @@ Servidor='Ares2'
 
 dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Puerto, drver='', motor='MariaDB') 
 
+print(dbConn.Estado)
 Status=Indicadores(Id=0, Motor=dbConn.Motor,conn=con)
-
-print(dbConn.chk_default())
 
 if dbConn.chk_default() :
     printlog ("Base de Datos UP :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
