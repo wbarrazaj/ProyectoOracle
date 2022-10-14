@@ -29,7 +29,9 @@ dbConn=BaseDD(servidor=Servidor, usuario=Usuario, clave=Clave, db=BDD, puerto=Pu
 
 Status=Indicadores(Id=0, Motor=dbConn.Motor,conn=con)
 
-if dbConn.chk_default() == False :
+print(dbConn.chk_default())
+
+if dbConn.chk_default() :
     printlog ("Base de Datos UP :  Servidor ---> " + dbConn.ServidorDB + " BDD ---> " + dbConn.SchemaDBD )
     Status.insert_tbl_Estado_BDD(0, Motor,Servidor,BDD, 'UP')
 else :
