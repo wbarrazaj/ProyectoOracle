@@ -43,13 +43,15 @@ class Indicadores():
         cur.execute(cre_table)
 
     def __lee_indicadores (self):
-        id_= str(self.Id)
-        cur = self.conn.cursor() 
-        consult= "select Id, Motor, Tipo, Descripcion, Consulta, Fecha, Tabla,  Estructura from Tbl_Indicadores where Id =" + id_ + " and Motor ='" + self.Motor + "';"
-        resp = cur.execute(consult)
-        self.Id, self.Motor, self.Tipo, self.Descripcion, self.Consulta, self.Fecha, self.Tabla , self.Estructura = resp.fetchone()
-        self.insert=self.__genera_sql_insert(self.Tabla)
-
+        try:
+            id_= str(self.Id)
+            cur = self.conn.cursor() 
+            consult= "select Id, Motor, Tipo, Descripcion, Consulta, Fecha, Tabla,  Estructura from Tbl_Indicadores where Id =" + id_ + " and Motor ='" + self.Motor + "';"
+            resp = cur.execute(consult)
+            self.Id, self.Motor, self.Tipo, self.Descripcion, self.Consulta, self.Fecha, self.Tabla , self.Estructura = resp.fetchone()
+            self.insert=self.__genera_sql_insert(self.Tabla)
+        except :
+            pass
         
     def __genera_sql_insert(self, tabla):
         cur = self.conn.cursor() 
