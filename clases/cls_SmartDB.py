@@ -87,7 +87,7 @@ class Indicadores():
         self.id=id
         Dato = [self.id, Motor,Servidor,BDD,fecha_ejecucion, estado ]
         self.insert_tbl(Dato, id) 
-        printlog(Dato) 
+
 
 
 
