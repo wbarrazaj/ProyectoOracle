@@ -91,11 +91,9 @@ class BaseDD():
   
         try:
             self.ejecutar_query('select 1 ;')
-            self.Estado = 0
             res = True
 
         except:
-            self.Estado = 1
             res = False
             
         return res
