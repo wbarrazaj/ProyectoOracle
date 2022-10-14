@@ -79,11 +79,13 @@ class Indicadores():
         cur.execute(query, Datos)
         self.conn.commit()
 
-    def insert_tbl_Estado_BDD (self, Id, Motor,Servidor,BDD, estado):
+    def insert_tbl_Estado_BDD (self, id, Motor,Servidor,BDD, estado):
         fecha_ejecucion= datetime.datetime.now()
         tabla='tbl_mdb_p000'
         txt_insert= self.__genera_sql_insert(tabla)
-        Dato = [Id, Motor,Servidor,BDD,fecha_ejecucion, estado ]
+        Dato = [id, Motor,Servidor,BDD,fecha_ejecucion, estado ]
+        self.id=id
+        self.insert_tbl(self,Dato, id) 
         printlog(Dato) 
         
         
