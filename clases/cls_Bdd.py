@@ -84,9 +84,9 @@ class BaseDD():
         except pymysql.err.OperationalError as err:
                 printlog("Algo salio Mal : Servidor ---> " + self.ServidorDB + " BDD --->" + self.SchemaDBD)
                 if err.args[0] == 2003:
-                    printlog(str(err.args[0]) + " --> Can't connect to MySQL server" )    
+                    printlog("Error: " + str(err.args[0]) + " --> Can't connect to MySQL server" )    
                 else :
-                    printlog(str(err.args[0]) + "--> Error to MySQL server" )
+                    printlog("Error: " + str(err.args[0]) + "--> Error to MySQL server" )
 
                 self.Estado = 1 
                 resultado = ''
