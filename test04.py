@@ -16,7 +16,7 @@ printlog("Inicio .--" )
 con = sqlite3.connect("SmartDB.db") 
 
 cur = con.cursor()
-res_conn_servidor = cur.execute("select Motor, Servidor, Usuario, Clave, BDD, Puerto from Tbl_Conexion where Servidor ('Ares','Apolo')") 
+res_conn_servidor = cur.execute("select Motor, Servidor, Usuario, Clave, BDD, Puerto from Tbl_Conexion where Servidor in ('Ares','Apolo')") 
 res_consulta_servidor=res_conn_servidor.fetchall() 
 
 #Motor, Servidor, Usuario, Clave, BDD, Puerto =
